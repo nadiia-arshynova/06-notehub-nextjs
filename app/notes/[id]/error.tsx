@@ -1,11 +1,9 @@
 'use client';
 
 interface ErrorProps {
-  error: unknown;
+  error: Error;
 }
 
 export default function NoteDetailsError({ error }: ErrorProps) {
-  const message = error instanceof Error ? error.message : String(error);
-
-  return <p>Could not fetch note details. {message}</p>;
+  return <p>Could not fetch note details. {error.message}</p>;
 }
